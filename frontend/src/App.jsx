@@ -9,7 +9,6 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import api from "./services/api";
 
-// Simple protected route component
 function ProtectedRoute({ children }) {
   const isAuthed = api.isAuthenticated();
   if (!isAuthed) return <Navigate to="/login" replace />;
@@ -51,8 +50,6 @@ function App() {
             <Route path="/signup" element={<Signup/>}></Route>
           </Routes>
         </main>
-
-        {/* Footer intentionally omitted in local prototype */}
       </div>
     </Router>
   );
